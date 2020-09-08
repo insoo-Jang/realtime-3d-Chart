@@ -1,11 +1,10 @@
+require('dotenv').config()
+
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseConfig = require('./webpack.common.js')
-
-const devPort = 8080
-const host = 'localhost'
 
 module.exports = merge(baseConfig, {
     mode: 'development',
@@ -13,7 +12,7 @@ module.exports = merge(baseConfig, {
     entry: {
         bundle: [
             'react-hot-loader/patch',
-            `webpack-dev-server/client?http://${host}:${devPort}`,
+            `webpack-dev-server/client?http://${process.env.DEV_HOST}:${process.env.DEV_PORT}`,
             'webpack/hot/only-dev-server',
             path.resolve(__dirname, 'src/index.js'),
         ],
@@ -26,19 +25,21 @@ module.exports = merge(baseConfig, {
     },
     devServer: {
         inline: true,
-        port: devPort,
+        port: process.env.DEV_PORT,
         contentBase: path.resolve(__dirname, 'public'),
         hot: true,
         publicPath: '/',
         historyApiFallback: true,
-        host,
+        host: process.env.DEV_HOST,
         proxy: {
             '/api': {
-                target: 'http://localhost',
+                target: process.env.DEV_PROXY_HTTP,
+                secure: false,
             },
             '/api/ws': {
-                target: 'ws://localhost',
+                target: process.env.DEV_PROXY_WS,
                 ws: true,
+                secure: false,
             },
         },
         headers: {

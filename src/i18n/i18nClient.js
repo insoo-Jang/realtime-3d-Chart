@@ -12,7 +12,8 @@ const i18nClient = i18n
         load: 'all',
         whitelist: ['en', 'en-US', 'ko', 'ko-KR'],
         nonExplicitWhitelist: false,
-        lngs: ['en-US', 'ko-KR'],
+        lng: 'en-US',
+        // lngs: ['en-US', 'ko-KR'],
         fallbackLng: 'en-US',
         interpolation: {
             escapeValue: false, // not needed for react!!

@@ -6,9 +6,7 @@
     "action": {},
     "title": {
         "main": {
-            "dashboard": "대시보드",
-            "list": "리스트",
-            "monitoring": "모니터링"
+            "dashboard": "메인"
         }
     }
 }

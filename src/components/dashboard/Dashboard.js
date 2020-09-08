@@ -1,8 +1,8 @@
 import React from 'react'
 import SubContainer from '../commons/container/SubContainer'
 
-const Dashboard = props => {
-    const main = <div>대시보드 </div>
+const Dashboard = () => {
+    const main = <div>123123123</div>
     return <SubContainer content={main} />
 }
 

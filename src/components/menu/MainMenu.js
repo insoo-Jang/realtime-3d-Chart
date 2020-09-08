@@ -7,18 +7,10 @@ import { withRouter } from 'react-router-dom'
 import i18n from 'i18next'
 
 const MainMenu = props => {
-    const menuStyle = {
-        background: 'none',
-        fontWeight: 'bold',
-        color: 'gray',
-        lineHeight: '64px',
-    }
     const { location, routes } = props
     const { pathname } = location
-    const onePath = pathname.split('/').length === 2
     const onePathname = pathname.split('/')[1]
     const [menus, setMenus] = useState([])
-    const [collapsed, setCollapsed] = useState(false)
 
     const buildMenus = param => {
         const menu = () => {
@@ -51,14 +43,10 @@ const MainMenu = props => {
         const { key, title, icon } = menu
         return (
             <>
-                {/*{icon && <Icon type={icon} />}*/}
                 <MenuUnfoldOutlined />
                 <span>{i18n.t(menu.title) || key}</span>
             </>
         )
-    }
-    const handleCollapse = param => {
-        setCollapsed(param)
     }
 
     const renderMenus = param => {
@@ -87,22 +75,16 @@ const MainMenu = props => {
         })
     }
     return (
-        // <Sidebar onCollapse={handleCollapse} collapsed={collapsed} width={240}>
         <Menu
             // theme="dark"
             mode="horizontal"
             theme="light"
             defaultSelectedKeys={[`/${onePathname}`]}
             selectedKeys={[`/${onePathname}`]}
-            // style={menuStyle}
             className="ant-layout-navbar-nav"
-            // defaultSelectedKeys={[isNumber ? pathname : `/${onePathname}`]}
-            // selectedKeys={[isNumber ? pathname : `/${onePathname}`]}
-            // defaultOpenKeys={onePath ? null : [`/${onePathname}`]}
         >
             {renderMenus(menus)}
         </Menu>
-        // </Sidebar>
     )
 }
 

@@ -10,8 +10,8 @@ import * as serviceWorker from './serviceWorker'
 import './styles/index.less'
 
 const antResources = {
-    ko: koKR,
-    'ko-KR': koKR,
+    // ko: koKR,
+    // 'ko-KR': koKR,
     en: enUS,
     'en-US': enUS,
 }

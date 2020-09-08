@@ -8,14 +8,27 @@ import { Container } from './components/commons'
 
 class App extends Component {
     renderRoute = route => {
-        return (<Route key={route.path} exact strict path={route.path} component={route.component}/>)
+        return (
+            <Route
+                key={route.path}
+                exact
+                strict
+                path={route.path}
+                component={route.component}
+            />
+        )
     }
 
-    renderRoutes = routes => routes.reduce((prev, route) => prev.concat(
-        <React.Fragment key={route.path}>
-            {this.renderRoute(route)}
-        </React.Fragment>,
-    ), []);
+    renderRoutes = routes =>
+        routes.reduce(
+            (prev, route) =>
+                prev.concat(
+                    <React.Fragment key={route.path}>
+                        {this.renderRoute(route)}
+                    </React.Fragment>,
+                ),
+            [],
+        )
 
     render() {
         return (
@@ -34,7 +47,7 @@ class App extends Component {
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
                     />
-                    <title>Router-tutorial-code</title>
+                    <title></title>
                 </Helmet>
                 <BrowserRouter>
                     <Switch>
@@ -44,11 +57,7 @@ class App extends Component {
                                     exact
                                     path="/"
                                     render={() => {
-                                        return (
-                                            <Redirect
-                                                to={'/MonitoringComponent'}
-                                            />
-                                        )
+                                        return <Redirect to={'/Dashboard'} />
                                     }}
                                 />
                                 {this.renderRoutes(mainRoutes)}
