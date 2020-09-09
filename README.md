@@ -15,10 +15,10 @@
 -   npm install
 
 ## Getting Started
-
--   git clone "this repository path" - (Clone the project)
--   npm start - (Run script)
--   http://localhost:8080 - Host access
+1. Clone this Project with `git clone https://github.com/insoo-Jang/reatime-3D-Chart.git`
+2. Install dependencies with `npm install` or `yarn`
+3. Run the App with `npm start`
+4. Open your web browser to `http://localhost:8080`
 
 ## Contents
 
