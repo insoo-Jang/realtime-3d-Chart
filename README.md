@@ -1,11 +1,9 @@
 <p align="center">
-  <a href="http://www.nkia.co.kr/">
-    1123
-  </a>
+![prps(3D)](https://user-images.githubusercontent.com/41278558/92563563-b996f500-f2b2-11ea-98c5-e2f1ef822728.gif)
 </p>
 
 <h3 align="center">
-  Chart Boilerplate Code
+  RealTime 3D chart
 </h3>
 
 <p align="center">
@@ -24,4 +22,6 @@
 
 ## Contents
 
-this is Chart Boilerplate
+This is RealTime 3D chart with Echart libraries,
+
+visualized Partial Discharge data in 3D (x: Phase, y: Time, z: dBm)
