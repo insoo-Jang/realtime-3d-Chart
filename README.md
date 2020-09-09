@@ -1,10 +1,6 @@
-<p align="center">
-![prps(3D)](https://user-images.githubusercontent.com/41278558/92563563-b996f500-f2b2-11ea-98c5-e2f1ef822728.gif)
-</p>
+#### RealTime 3D chart
 
-<h3 align="center">
-  RealTime 3D chart
-</h3>
+![prps(3D)](https://user-images.githubusercontent.com/41278558/92563563-b996f500-f2b2-11ea-98c5-e2f1ef822728.gif)
 
 <p align="center">
   <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/npm/l/react-design-editor?style=flat-square"></a>
