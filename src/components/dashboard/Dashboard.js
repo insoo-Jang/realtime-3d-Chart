@@ -1,9 +1,9 @@
 import React from 'react'
 import SubContainer from '../commons/container/SubContainer'
+import ChartContainer from '../../containers/ChartContainer'
 
 const Dashboard = () => {
-    const main = <div>123123123</div>
-    return <SubContainer content={main} />
+    return <SubContainer content={<ChartContainer />} />
 }
 
 export default Dashboard

@@ -16,6 +16,7 @@
         "animejs": "^3.0.0",
         "antd": "4.0.3",
         "echarts": "^4.7.0",
+        "echarts-gl": "^1.1.1",
         "i18next": "^19.3.3",
         "i18next-browser-languagedetector": "^2.2.3",
         "lodash": "^4.17.10",
@@ -36,7 +37,8 @@
         "redux-thunk": "^2.3.0",
         "resize-observer-polyfill": "^1.5.1",
         "store": "^2.0.12",
-        "warning": "^4.0.3"
+        "warning": "^4.0.3",
+        "axios": "^0.19.2"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",

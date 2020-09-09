@@ -8,5 +8,10 @@
         "main": {
             "dashboard": "MAIN"
         }
+    },
+    "chart": {
+        "maximum-discharge": "Maximum discharge: {{arg}}dBm",
+        "minimum-discharge": "Minimum discharge: {{arg}}dBm",
+        "average-discharge": "Average discharge: {{arg}}dBm"
     }
 }
