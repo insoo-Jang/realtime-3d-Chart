@@ -5,7 +5,7 @@ import Chart from './Chart'
 
 const fetchData = async param => {
     try {
-        const response = await axios.get('/semples/data.json')
+        const response = await axios.get('/assets/sample/data.json')
         if (response.status === 200 && response.data) {
             return response.data
         }
@@ -15,8 +15,7 @@ const fetchData = async param => {
     }
 }
 
-const ChartContainer = props => {
-    const {} = props
+const ChartContainer = () => {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState({ prps3D: [] })
     const [defaultData, setDefaultData] = useState([])
@@ -36,6 +35,7 @@ const ChartContainer = props => {
         )
     }
     useEffect(() => {
+        setLoading(true)
         fetchData()
             .then(response => {
                 if (response) {
@@ -55,12 +55,15 @@ const ChartContainer = props => {
                     }
                     setDefaultData(initData)
                     setData(newData)
+                    setLoading(false)
                 } else {
                     setDefaultData([])
                     setData([])
+                    setLoading(false)
                 }
             })
             .catch(error => {
+                setLoading(false)
                 console.error('[ERROR] : ChartContainer useEffect()', e)
             })
     }, [])
@@ -69,11 +72,13 @@ const ChartContainer = props => {
         <Row justify="center" align="middle" style={{ height: '100%' }}>
             <Col span={8}>
                 <Card title={title()} style={{ width: '100%', height: '100%' }}>
-                    <Chart
-                        data={data}
-                        defaultData={defaultData}
-                        pd3DPlay={play}
-                    />
+                    <Spin spinning={loading}>
+                        <Chart
+                            data={data}
+                            defaultData={defaultData}
+                            pd3DPlay={play}
+                        />
+                    </Spin>
                 </Card>
             </Col>
         </Row>
