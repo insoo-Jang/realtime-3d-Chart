@@ -54,8 +54,8 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
+## dotenv environment variables file
+#.env
 
 # Webstorm project configuration files
 **/.idea
@@ -78,6 +78,3 @@ typings/
 # Test Build Ignore
 /test_build
 **/__snapshots__
-
-# Environment
-.env
