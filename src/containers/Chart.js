@@ -265,8 +265,8 @@ const Chart = props => {
         chart.setOption(getOption(defaultData, data))
         timeLineChart.setOption(getTimeLineOption())
         timeLineChart.on('timelinechanged', params => {
-            const startIndex = 128 * params.currentIndex * 10
-            // const startIndex = 128 * params.currentIndex
+            // const startIndex = 128 * params.currentIndex * 10
+            const startIndex = 128 * params.currentIndex
 
             const endIndex = 6400 + startIndex
             const prps3DData = data.prps3D.slice(startIndex, endIndex)
