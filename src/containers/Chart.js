@@ -44,6 +44,7 @@ const Chart = props => {
         return {
             baseOption: {
                 timeline: {
+                    currentIndex: 0,
                     axisType: 'value',
                     autoPlay: false,
                     playInterval: 1000 / 80,
@@ -88,9 +89,9 @@ const Chart = props => {
                     color: '#96a6bd',
                 },
                 min: 0,
-                max: 50,
+                // max: 50,
                 //max default : 255
-                // max: 255,
+                max: 255,
                 inRange: {
                     color: [
                         '#1515f9',
@@ -251,7 +252,7 @@ const Chart = props => {
                         },
                     },
                     shading: 'color',
-                    type: 'surface',
+                    type: 'bar3D',
                     data: dataParam || [],
                 },
             ],
@@ -264,9 +265,10 @@ const Chart = props => {
         chart.setOption(getOption(defaultData, data))
         timeLineChart.setOption(getTimeLineOption())
         timeLineChart.on('timelinechanged', params => {
-            const startIndex = 128 * params.currentIndex
-            const endIndex = 6400 + startIndex
+            const startIndex = 128 * params.currentIndex * 10
+            // const startIndex = 128 * params.currentIndex
 
+            const endIndex = 6400 + startIndex
             const prps3DData = data.prps3D.slice(startIndex, endIndex)
             chart.setOption(getOption(prps3DData, data))
         })

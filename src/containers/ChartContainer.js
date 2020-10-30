@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { isEmpty } from 'lodash'
 import { Card, Col, Row, Spin, Button } from 'antd'
 import axios from 'axios'
 import Chart from './Chart'
 
 const fetchData = async param => {
     try {
-        const response = await axios.get('/assets/sample/data.json')
+        const response = await axios.get('/assets/sample/test.json')
         if (response.status === 200 && response.data) {
             return response.data
         }
@@ -49,9 +50,10 @@ const ChartContainer = () => {
                         prps3D: timeSeriesData,
                         max,
                         average,
-                        timeLength: timeSeriesData
-                            ? (timeSeriesData.length - 6400) / 128
-                            : 310,
+                        timeLength: !isEmpty(timeSeriesData)
+                            ? (timeSeriesData.length - 5120) / 1280
+                            : 360,
+                        // timeLength: timeSeriesData ? (timeSeriesData.length - 6400) / 128 : 310,
                     }
                     setDefaultData(initData)
                     setData(newData)
